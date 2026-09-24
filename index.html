@@ -1,0 +1,265 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>STEEL BALL RUN — Episode 2 Countdown</title>
+<meta name="description" content="A fan-made, color-shifting countdown to STEEL BALL RUN: JoJo's Bizarre Adventure Episode 2 (2nd STAGE) — streaming on Netflix September 25, 2026. Live countdown in YOUR local time, world clocks, and every official trailer.">
+<meta name="theme-color" content="#0b0908">
+<meta property="og:title" content="STEEL BALL RUN — Episode 2 Countdown">
+<meta property="og:description" content="2nd STAGE begins 2026.09.25 17:00 JST on Netflix. Countdown in your local time + all official trailers. Nyo-ho-ho!">
+<meta property="og:type" content="website">
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Ccircle cx='32' cy='32' r='28' fill='%23f4ead8'/%3E%3Cpath d='M32 4a28 28 0 0 1 0 56' fill='%23e0a437'/%3E%3Ccircle cx='32' cy='32' r='28' fill='none' stroke='%230b0908' stroke-width='4'/%3E%3Cpath d='M18 32c8-10 20-10 28 0M18 32c8 10 20 10 28 0' fill='none' stroke='%230b0908' stroke-width='3'/%3E%3C/svg%3E">
+<link rel="stylesheet" href="css/style.css">
+</head>
+<body data-phase="calm">
+
+<!-- ============ ANIMATED BACKGROUND LAYERS ============ -->
+<div class="bg" aria-hidden="true">
+  <canvas id="dust"></canvas>
+  <div class="bg-halftone"></div>
+  <div class="bg-speedlines"></div>
+  <div class="bg-menace" id="menaceField"></div>
+  <div class="bg-vignette"></div>
+</div>
+
+<!-- ============ TOP BAR ============ -->
+<header class="topbar">
+  <a class="brand" href="#top">
+    <svg class="brand-ball" viewBox="0 0 64 64" aria-hidden="true">
+      <circle cx="32" cy="32" r="28" fill="var(--paper)"/>
+      <path d="M32 4a28 28 0 0 1 0 56" fill="var(--acc)"/>
+      <circle cx="32" cy="32" r="28" fill="none" stroke="var(--ink)" stroke-width="4"/>
+      <path d="M18 32c8-10 20-10 28 0M18 32c8 10 20 10 28 0" fill="none" stroke="var(--ink)" stroke-width="3"/>
+    </svg>
+    <span class="brand-txt">SBR<span class="brand-slash">//</span>EP2 COUNTDOWN</span>
+  </a>
+  <div class="topbar-right">
+    <div class="hue-ctrl" role="group" aria-label="Color theme">
+      <button class="hue-btn is-active" data-hue="auto" title="Auto color-cycle">AUTO</button>
+      <button class="hue-btn" data-hue="38"  title="Desert Gold">GOLD</button>
+      <button class="hue-btn" data-hue="145" title="Devil's Palm Green">PALM</button>
+      <button class="hue-btn" data-hue="205" title="Steel Blue">STEEL</button>
+      <button class="hue-btn" data-hue="325" title="Hot Pants Pink">PINK</button>
+    </div>
+    <span class="tz-pill" id="tzPill" title="Your device timezone">--:--</span>
+  </div>
+</header>
+
+<main id="top">
+
+  <!-- ============ HERO + COUNTDOWN ============ -->
+  <section class="hero">
+    <p class="kicker jp">アニメ『スティール・ボール・ラン ジョジョの奇妙な冒険』</p>
+    <h1 class="title" data-text="STEEL BALL RUN">STEEL BALL RUN</h1>
+    <p class="subtitle">JOJO'S BIZARRE ADVENTURE · PART 7 · <span class="nf-red">NETFLIX</span></p>
+
+    <div class="ep-pill">
+      <span class="ep-num">EPISODE 2</span>
+      <span class="ep-sep">◆</span>
+      <span class="ep-name">“THE SHERIFF'S REQUEST TO MOUNTAIN TIM”</span>
+      <span class="ep-sep">◆</span>
+      <span class="ep-stage">2nd STAGE</span>
+    </div>
+
+    <p class="tagline"><span class="jp">鉄球の回転、運命が走りだす。</span><br>
+      <span class="tagline-en">Guided by the Steel Ball's spin, destiny begins to run.</span></p>
+
+    <div class="live-badge" id="liveBadge" hidden>
+      <span class="live-dot"></span> NOW STREAMING ON NETFLIX — THE 2nd STAGE HAS BEGUN! <span class="jp">ニョホホ…!</span>
+    </div>
+
+    <div class="cd-wrap">
+      <p class="cd-label"><span class="jp" id="cdLabelJp">配信開始まで</span> <span id="cdLabelEn">UNTIL EPISODE 2 DROPS IN YOUR TIMEZONE</span></p>
+      <div class="countdown" id="countdown" role="timer" aria-live="off">
+        <div class="unit u1"><div class="digits" id="u-days">--</div><span class="ulabel">DAYS</span></div>
+        <span class="cd-colon">:</span>
+        <div class="unit u2"><div class="digits" id="u-hours">--</div><span class="ulabel">HOURS</span></div>
+        <span class="cd-colon">:</span>
+        <div class="unit u3"><div class="digits" id="u-mins">--</div><span class="ulabel">MINUTES</span></div>
+        <span class="cd-colon">:</span>
+        <div class="unit u4"><div class="digits" id="u-secs">--</div><span class="ulabel">SECONDS</span></div>
+      </div>
+      <div class="ms-row">
+        <svg class="ms-ball" viewBox="0 0 64 64" aria-hidden="true">
+          <circle cx="32" cy="32" r="28" fill="none" stroke="var(--acc)" stroke-width="5"/>
+          <path d="M32 4a28 28 0 0 1 28 28" fill="none" stroke="var(--acc2)" stroke-width="5" stroke-linecap="round"/>
+          <circle cx="32" cy="32" r="6" fill="var(--acc)"/>
+        </svg>
+        <div class="ms-track"><div class="ms-fill" id="msFill"></div></div>
+        <span class="ms-num" id="msNum">.000</span>
+      </div>
+
+      <div class="progress">
+        <div class="progress-meta">
+          <span>1st STAGE · 2026.03.19</span>
+          <span id="progressPct">--%</span>
+          <span>2nd STAGE · 2026.09.25</span>
+        </div>
+        <div class="track"><div class="fill" id="progFill"><span class="track-ball"></span></div></div>
+      </div>
+
+      <div class="cta-row">
+        <a class="btn btn-solid" href="#trailers">▶ WATCH THE TRAILERS</a>
+        <button class="btn btn-ghost" id="icsBtn" type="button">＋ ADD TO CALENDAR</button>
+        <a class="btn btn-ghost" href="https://www.netflix.com/title/82181513" target="_blank" rel="noopener">NETFLIX ↗</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============ LOCAL TIME / WORLD CLOCKS ============ -->
+  <section class="section" id="local">
+    <h2 class="sec-title"><span class="sec-jp jp">あなたの地域で</span>IN YOUR AREA</h2>
+    <p class="sec-sub">The drop moment, translated to <em>your</em> device's clock. Netflix goes live worldwide at the same instant — <strong>Friday, Sep 25 2026, 17:00 JST</strong> — which lands differently depending on where you're standing.</p>
+
+    <div class="local-card">
+      <div class="local-main">
+        <span class="local-flag" id="localFlag">🌐</span>
+        <div>
+          <p class="local-place" id="localPlace">Reading your device…</p>
+          <p class="local-when" id="localWhen">—</p>
+          <p class="local-tz" id="localTz">—</p>
+        </div>
+      </div>
+      <div class="local-clock">
+        <span class="local-clock-label">YOUR CLOCK RIGHT NOW</span>
+        <span class="local-clock-time" id="localNow">--:--:--</span>
+      </div>
+    </div>
+
+    <div class="zone-grid" id="zoneGrid"><!-- built by JS --></div>
+    <p class="fineprint">Rollout note: Netflix typically flips titles on at their regional cadence around this instant; exact availability can lag by minutes. Times computed live from your device clock — no server needed.</p>
+  </section>
+
+  <!-- ============ TRAILERS ============ -->
+  <section class="section" id="trailers">
+    <h2 class="sec-title"><span class="sec-jp jp">予告編</span>OFFICIAL TRAILERS &amp; PVs</h2>
+    <p class="sec-sub">Every official moving picture unleashed so far — teasers, trailers and the 1st STAGE digest. Click a poster to play it right here.</p>
+    <div class="trailer-grid" id="trailerGrid">
+
+      <button class="trailer-card" data-yt="gCzOb1mV2TY" type="button">
+        <span class="thumb"><img loading="lazy" src="https://i.ytimg.com/vi/gCzOb1mV2TY/hqdefault.jpg" alt=""><span class="play"></span></span>
+        <span class="t-badges"><b class="b-en">EN</b><b class="b-ch">NETFLIX ANIME</b><b class="b-hot">2nd STAGE</b></span>
+        <span class="t-title">2nd STAGE — Official Trailer</span>
+        <span class="t-sub">The Anime Expo 2026 reveal: release date, Mountain Tim, Hot Pants &amp; Valentine.</span>
+      </button>
+
+      <button class="trailer-card" data-yt="jXtG_lcR9P4" type="button">
+        <span class="thumb"><img loading="lazy" src="https://i.ytimg.com/vi/jXtG_lcR9P4/hqdefault.jpg" alt=""><span class="play"></span></span>
+        <span class="t-badges"><b class="b-jp">JP</b><b class="b-ch">WARNER BROS. JAPAN</b><b class="b-hot">2nd TRAILER</b></span>
+        <span class="t-title">PV 第2弾 — 2nd Trailer !!</span>
+        <span class="t-sub">The Japanese second trailer for the 2nd &amp; 3rd STAGE, with new cast reveals.</span>
+      </button>
+
+      <button class="trailer-card" data-yt="TWw06YDOQy0" type="button">
+        <span class="thumb"><img loading="lazy" src="https://i.ytimg.com/vi/TWw06YDOQy0/hqdefault.jpg" alt=""><span class="play"></span></span>
+        <span class="t-badges"><b class="b-jp">JP</b><b class="b-ch">WARNER BROS. JAPAN</b><b>TEASER PV</b></span>
+        <span class="t-title">2nd STAGE ティザーPV</span>
+        <span class="t-sub">First look at the 750-mile desert crossing and the Devil's Palm.</span>
+      </button>
+
+      <button class="trailer-card" data-yt="43qoWFJbWF0" type="button">
+        <span class="thumb"><img loading="lazy" src="https://i.ytimg.com/vi/43qoWFJbWF0/hqdefault.jpg" alt=""><span class="play"></span></span>
+        <span class="t-badges"><b class="b-en">EN</b><b class="b-ch">NETFLIX</b><b>TRAILER</b></span>
+        <span class="t-title">2nd STAGE — Official Trailer (Netflix)</span>
+        <span class="t-sub">The main-channel cut of the English-dubbed 2nd STAGE trailer.</span>
+      </button>
+
+      <button class="trailer-card" data-yt="m6M3O1vqMSs" type="button">
+        <span class="thumb"><img loading="lazy" src="https://i.ytimg.com/vi/m6M3O1vqMSs/hqdefault.jpg" alt=""><span class="play"></span></span>
+        <span class="t-badges"><b class="b-jp">JP</b><b class="b-ch">NETFLIX JAPAN</b><b>DIGEST</b></span>
+        <span class="t-title">1st STAGE ダイジェスト映像</span>
+        <span class="t-sub">Catch-up digest of the 47-minute premiere before the 2nd STAGE opens.</span>
+      </button>
+
+      <button class="trailer-card" data-yt="EdarcSH9jmY" type="button">
+        <span class="thumb"><img loading="lazy" src="https://i.ytimg.com/vi/EdarcSH9jmY/hqdefault.jpg" alt=""><span class="play"></span></span>
+        <span class="t-badges"><b class="b-jp">JP</b><b class="b-ch">WARNER BROS. JAPAN</b><b>1st TRAILER</b></span>
+        <span class="t-title">PV 第1弾 — 1st Trailer !!</span>
+        <span class="t-sub">The trailer that locked the March 19 premiere — Sandman &amp; Pocoloco debut.</span>
+      </button>
+
+      <button class="trailer-card" data-yt="93QIhAbxmdc" type="button">
+        <span class="thumb"><img loading="lazy" src="https://i.ytimg.com/vi/93QIhAbxmdc/hqdefault.jpg" alt=""><span class="play"></span></span>
+        <span class="t-badges"><b class="b-jp">JP</b><b class="b-ch">WARNER BROS. JAPAN</b><b>TEASER</b></span>
+        <span class="t-title">ティザーPV — New Teaser Trailer</span>
+        <span class="t-sub">AnimeJapan 2026 teaser: the 2nd STAGE is coming… eventually. (It did!)</span>
+      </button>
+
+      <button class="trailer-card" data-yt="RHkvkwnQbEQ" type="button">
+        <span class="thumb"><img loading="lazy" src="https://i.ytimg.com/vi/RHkvkwnQbEQ/hqdefault.jpg" alt=""><span class="play"></span></span>
+        <span class="t-badges"><b class="b-jp">JP</b><b class="b-ch">WARNER BROS. JAPAN</b><b>ANNOUNCE</b></span>
+        <span class="t-title">特報映像 — Announcement Trailer</span>
+        <span class="t-sub">Where it all started: the anime adaptation announcement special report.</span>
+      </button>
+
+    </div>
+  </section>
+
+  <!-- ============ EPISODE DOSSIER ============ -->
+  <section class="section" id="dossier">
+    <h2 class="sec-title"><span class="sec-jp jp">第2話</span>EPISODE 2 DOSSIER</h2>
+
+    <div class="dossier-grid">
+      <article class="dossier-main">
+        <h3>“The Sheriff's Request to Mountain Tim”</h3>
+        <p class="jp dossier-jp">マウンテン・ティムへの依頼</p>
+        <p class="dossier-syn">A desert crossing spanning roughly <strong>750 miles</strong> — the land Johnny Joestar and Gyro Zeppeli must challenge is home to the area feared as the <strong>“Devil's Palm.”</strong> As ominous incidents begin to unfold, they are forced to realize that this race is far more than a mere competition. From a cowboy pursuing the culprit behind a sudden mysterious murder, to a figure wielding immense power… the two press forward into the 2nd STAGE, where countless hidden motives collide.</p>
+        <div class="chip-row">
+          <span class="chip">Across the Arizona Desert</span>
+          <span class="chip">The Devil's Palm</span>
+          <span class="chip">Gyro Zeppeli's Destiny</span>
+          <span class="chip">The Terrorist from a Faraway Country</span>
+          <span class="chip">Tusk</span>
+          <span class="chip">Scary Monsters</span>
+        </div>
+        <div class="stat-grid">
+          <div class="stat"><b>192</b><span>overall JoJo episode</span></div>
+          <div class="stat"><b>11</b><span>eps in 2nd &amp; 3rd STAGE</span></div>
+          <div class="stat"><b>FRI</b><span>new episode weekly</span></div>
+          <div class="stat"><b>750</b><span>miles of desert</span></div>
+          <div class="stat"><b>4,000</b><span>miles total race</span></div>
+          <div class="stat"><b>$50M</b><span>race grand prize</span></div>
+        </div>
+      </article>
+
+      <aside class="dossier-side">
+        <h4>PRODUCTION</h4>
+        <ul class="crew">
+          <li><span>Studio</span><b>david production</b></li>
+          <li><span>Directors</span><b>Yasuhiro Kimura · Hideya Takahashi</b></li>
+          <li><span>Series Director</span><b>Toshiyuki Kato</b></li>
+          <li><span>Series Composition</span><b>Yasuko Kobayashi</b></li>
+          <li><span>Music</span><b>Yugo Kanno</b></li>
+          <li><span>Original Creator</span><b>Hirohiko Araki</b></li>
+        </ul>
+        <h4>NEW IN 2nd STAGE</h4>
+        <ul class="cast">
+          <li><b>Mountain Tim</b><span>JP Tomoaki Maeno</span></li>
+          <li><b>Hot Pants</b><span>JP Yoko Hikasa</span></li>
+          <li><b>Funny Valentine</b><span>JP Tomokazu Sugita</span></li>
+          <li><b>Johnny Joestar</b><span>JP Shogo Sakata · EN Daman Mills</span></li>
+          <li><b>Gyro Zeppeli</b><span>JP Yohei Azakami · EN Kaiji Tang</span></li>
+        </ul>
+      </aside>
+    </div>
+  </section>
+
+  <footer class="footer">
+    <p class="footer-menace jp">ゴゴゴゴゴゴゴゴ</p>
+    <p>A fan-made countdown. Not affiliated with Lucky Land Communications, Shueisha, Warner Bros. Japan, david production or Netflix. All trailers © their respective owners, embedded via YouTube.</p>
+    <p class="footer-src">Drop moment source: official schedule — Netflix worldwide, Fridays from <strong>2026-09-25 17:00 JST</strong> (JoJo Wiki / jojo-portal.com). Fonts: Dela Gothic One, Anton, Space Grotesk &amp; JetBrains Mono (SIL OFL).</p>
+  </footer>
+</main>
+
+<!-- ============ VIDEO MODAL ============ -->
+<dialog id="player" aria-label="Trailer player">
+  <div class="player-frame" id="playerFrame"></div>
+  <button class="player-close" id="playerClose" type="button">✕ CLOSE</button>
+</dialog>
+
+<noscript><p style="text-align:center;padding:2rem;color:#f4ead8">JavaScript is off — but the facts remain: <strong>Episode 2 drops Friday, September 25, 2026, 17:00 JST (08:00 UTC)</strong> on Netflix, weekly Fridays after that.</p></noscript>
+
+<script src="js/app.js"></script>
+</body>
+</html>
